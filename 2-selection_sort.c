@@ -23,8 +23,11 @@ void selection_sort(int *array, size_t size)
 				min = array[iterator2];
 			}
 		}
-		array[place] = array[iterator1];
-		array[iterator1] = min;
-		print_array(array, size);
+		if (min != array[iterator1])
+		{
+			array[place] = array[iterator1];
+			array[iterator1] = min;
+			print_array(array, size);
+		}
 	}
 }
