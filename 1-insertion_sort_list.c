@@ -10,10 +10,10 @@ void insertion_sort_list(listint_t **list)
 	listint_t *aux = *list;
 	int n = 0;
 
-	if (list == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	while (aux != NULL && aux->next) /*while we have a next node*/
+	while (aux != NULL && aux->next != NULL) /*while we have a next node*/
 	{
 		if (aux->n > aux->next->n) /*if the current node is bigger than next*/
 		{
